@@ -15,6 +15,7 @@ public class Ahorcado {
     private String word;
     private int jugadas;
     private int encontradas;
+    private int inicial;
 
     public Ahorcado() {
     }
@@ -23,6 +24,7 @@ public class Ahorcado {
         this.setWord(word);
         this.jugadas = jugadas;
         this.encontradas = encontradas;
+        this.inicial = jugadas;
     }
 
     
@@ -72,6 +74,11 @@ public class Ahorcado {
     
     public void setJugadas(int jugadas) {
         this.jugadas = jugadas;
+        
+    }
+
+    public int getInicial() {
+        return inicial;
     }
 
     public int getEncontradas() {

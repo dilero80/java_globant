@@ -22,6 +22,7 @@ public class ServicioAhorcado {
         turnos = leer.nextInt();
         System.out.println("Digite la palabra del ahorcado");
         palabra = leer.next();
+        palabra = palabra.toUpperCase();
         Ahorcado A = new Ahorcado(palabra, turnos, 0);
         return A;
         
@@ -81,8 +82,12 @@ public class ServicioAhorcado {
         String letra;
         int intentos;
         do{
-            System.out.println("Digite una letra a buscar");
-            letra = leer.next();
+            do{
+                System.out.println("Digite una letra a buscar");
+                letra = leer.next();
+                letra = letra.toUpperCase();
+            }while(!(letra.length()==1));
+                
             if(this.encontradas(A, letra)){
                  System.out.println("-----------------------");
                  System.out.println("Letra correcta");
@@ -107,12 +112,70 @@ public class ServicioAhorcado {
     }
     
     public void mostrarAhorcado(Ahorcado A){
+        int quedan =  A.getJugadas();
+        int dibujo = (int)((quedan*100)/A.getInicial()); 
+        System.out.println("---------------------------");
+        System.out.println("------JUEGO AHORCADO-------");
+        System.out.println("---------------------------");
+        
+        if(81 <= dibujo && dibujo <= 100){            
+            System.out.println("+----+");
+            System.out.println("|    |");
+            System.out.println("|");
+            System.out.println("|");
+            System.out.println("|");
+            System.out.println("|");
+        }
+        else if(61 <= dibujo && dibujo <= 80){
+            System.out.println("+----+");
+            System.out.println("|    |");
+            System.out.println("|    O");
+            System.out.println("|");
+            System.out.println("|");
+            System.out.println("|");
+        }
+        else if(41 <= dibujo && dibujo <= 60){
+            System.out.println("+----+");
+            System.out.println("|    |");
+            System.out.println("|    O");
+            System.out.println("|    |");
+            System.out.println("|");
+            System.out.println("|");
+        }
+        else if(21 <= dibujo && dibujo <= 40){
+            System.out.println("+----+");
+            System.out.println("|    |");
+            System.out.println("|    O");
+            System.out.println("|   -|-");
+            System.out.println("|");
+            System.out.println("|");
+        }
+        else if(1 <= dibujo && dibujo <= 20){
+            System.out.println("+----+");
+            System.out.println("|    |");
+            System.out.println("|    O");
+            System.out.println("|   -|-");
+            System.out.println("|   / \'");
+            System.out.println("|");
+        }
+        else if(dibujo == 0){
+            System.out.println("+----+");
+            System.out.println("|  +-| ");
+            System.out.println("|  |(**)");
+            System.out.println("   +----");
+            System.out.println("|   -|-");
+            System.out.println("|   / \'");
+            System.out.println("|");
+        }
+        
+        
         for(String L : A.getWordVectorshow()){
             System.out.print("[" + L + "]");
         }
         System.out.println("");
-        System.out.println("Te quedan " + A.getJugadas() + " Oportunidades");
+        System.out.println("Te quedan " + quedan + " Oportunidades");
         System.out.println("LLevas " + A.getEncontradas() + " Encontradas");
+        
     }
     
     public void mostrarVector(Ahorcado A){

@@ -49,7 +49,7 @@ public class EjcExtra6_POO_juego_Ahorcado {
                     break;
                 case 2:
                     System.out.println("Digite la palabra nueva");
-                    A.setWord(leer.next());
+                    A.setWord(leer.next().toUpperCase());
                     System.out.println("Palabra cambiada");
                     break;
                 case 3:
