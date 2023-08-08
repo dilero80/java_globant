@@ -62,7 +62,6 @@ public class ServicioCliente {
             case "C":
                 objetivo = "Aumento de masa muscular";
                 break;
-            
         }
         
         Cliente C = new Cliente(id, nombre, edad, altura, peso, objetivo);
@@ -119,6 +118,29 @@ public class ServicioCliente {
         System.out.println("Cliente no esta en lista");
         return CL;
                 
+    }
+    
+    public void verCliente(ArrayList<Cliente> CL, String id){
+        for (int i = 0; i < CL.size() ; i++) {
+            if (CL.get(i).getId().equals(id)){
+                       
+                System.out.println("------------------------");
+                System.out.println("LISTAR CLIENTE");
+                System.out.println("------------------------");
+                System.out.println("El nombre es "+ this.obtenerNombre(CL.get(i)));
+                System.out.println("El ID es " + this.obtenerID(CL.get(i)));
+                System.out.println("El Peso es " + this.obtenerPeso(CL.get(i)));
+                System.out.println("La edad es " + this.obtenerEdad(CL.get(i)));
+                System.out.println("La altura es " + this.obtenerAltura(CL.get(i)));
+                System.out.println("El objetivo es " + this.obtenerObj(CL.get(i)));
+                System.out.println("------------------------");
+                System.out.println("COMPLETADO");
+                System.out.println("------------------------");
+                return;
+            }
+        }
+        System.out.println("Cliente no esta en lista");
+        
     }
     
     public String obtenerID(Cliente C){

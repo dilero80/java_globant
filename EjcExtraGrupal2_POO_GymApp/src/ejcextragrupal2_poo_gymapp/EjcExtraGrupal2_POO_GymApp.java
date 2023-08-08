@@ -6,7 +6,9 @@
 package ejcextragrupal2_poo_gymapp;
 
 import Entidades.Cliente;
+import Entidades.Rutina;
 import Servicios.ServicioCliente;
+import Servicios.ServicioRutina;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,11 +26,13 @@ public class EjcExtraGrupal2_POO_GymApp {
         int option;
         String id;
         ArrayList<Cliente> CL = new ArrayList<>();
+        ArrayList<Rutina> RL = new ArrayList<>();
         ServicioCliente SC = new ServicioCliente();
+        ServicioRutina SR = new ServicioRutina();
         
         do{
             System.out.println("----------------------------");
-            System.out.println("MENU AHORCADO");
+            System.out.println("MENU GYM");
             System.out.println("----------------------------");
             menu();
             System.out.println("Digite la opcion deseada    ?");
@@ -53,16 +57,31 @@ public class EjcExtraGrupal2_POO_GymApp {
                     SC.eliminarCliente(CL, id);
                     break;
                 case 5:
+                    Rutina R = SR.crearRutina();
+                    RL.add(R);
                     break;
                 case 6:
+                    SR.obtenerRutinas(RL);
                     break;
                 case 7:
+                    System.out.println("Digite el ID de Rutina a actualizar");
+                    id = leer.next();
+                    SR.actualizarRutina(RL, id);
                     break;
                 case 8:
+                    System.out.println("Digite el ID del Rutina a borrar");
+                    id = leer.next();
+                    SR.eliminarRutina(RL, id);
                     break;
                 case 9:
+                    System.out.println("Digite el ID del cliente a mostrar");
+                    id = leer.next();
+                    SC.verCliente(CL, id);
                     break;
                 case 10:
+                    System.out.println("Digite el ID de rutina a mostrar");
+                    id = leer.next();
+                    SR.verRutina(RL, id);
                     break;
                 case 11:
                     option = 11;
