@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejc2_Herencias_applianceApp">
+  <ClassDiagramComponents>
+    <Class name="Ejc2_Herencias_applianceApp" package="ejc2_herencias_applianceapp" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Appliance" package="Entities" visibility="public" xPosition="274.0" yPosition="20.0">
+      <Fields>
+        <Field name="Price" type="Integer" visibility="protected"/>
+        <Field name="color" type="String" visibility="protected"/>
+        <Field name="energy" type="String" visibility="protected"/>
+        <Field name="weight" type="Double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="Price"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="energy"/>
+          <Argument type="Double" name="weight"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPrice" returnType="Integer" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="Integer" name="Price"/>
+        </Method>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="getEnergy" returnType="String" visibility="public"/>
+        <Method name="setEnergy" returnType="void" visibility="public">
+          <Argument type="String" name="energy"/>
+        </Method>
+        <Method name="getWeight" returnType="Double" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="Double" name="weight"/>
+        </Method>
+        <Method name="energyletterCheck" returnType="String" visibility="private">
+          <Argument type="String" name="letter"/>
+        </Method>
+        <Method name="colorCheck" returnType="String" visibility="private">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Television" package="Entities" visibility="public" xPosition="696.0" yPosition="20.0">
+      <Fields>
+        <Field name="resolution" type="Integer" visibility="private"/>
+        <Field name="tdt" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="resolution"/>
+          <Argument type="boolean" name="tdt"/>
+          <Argument type="Integer" name="Price"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="energy"/>
+          <Argument type="Double" name="weight"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getResolution" returnType="Integer" visibility="public"/>
+        <Method name="setResolution" returnType="void" visibility="public">
+          <Argument type="Integer" name="resolution"/>
+        </Method>
+        <Method name="isTdt" returnType="boolean" visibility="public"/>
+        <Method name="setTdt" returnType="void" visibility="public">
+          <Argument type="boolean" name="tdt"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="WashingMachine" package="Entities" visibility="public" xPosition="696.0" yPosition="291.0">
+      <Fields>
+        <Field name="charge" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="charge"/>
+          <Argument type="Integer" name="Price"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="energy"/>
+          <Argument type="Double" name="weight"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCharge" returnType="Integer" visibility="public"/>
+        <Method name="setCharge" returnType="void" visibility="public">
+          <Argument type="Integer" name="charge"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ApplianceService" package="Services" visibility="public" xPosition="1418.0" yPosition="30.0">
+      <Fields>
+        <Field name="read" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createAppliance" returnType="Appliance" visibility="protected"/>
+        <Method name="finalPrice" returnType="Integer" visibility="protected">
+          <Argument type="Double" name="weight"/>
+          <Argument type="String" name="energy"/>
+        </Method>
+        <Method name="weightPrice" returnType="Integer" visibility="protected">
+          <Argument type="Double" name="weight"/>
+        </Method>
+        <Method name="energyletterCheck" returnType="String" visibility="protected">
+          <Argument type="String" name="letter"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TvService" package="Services" visibility="public" xPosition="1825.0" yPosition="291.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createTV" returnType="Television" visibility="public"/>
+        <Method name="createTV" returnType="Television" visibility="public">
+          <Argument type="Integer" name="resolution"/>
+          <Argument type="boolean" name="tdt"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="energy"/>
+          <Argument type="Double" name="weight"/>
+        </Method>
+        <Method name="finalPrice" returnType="Integer" visibility="public">
+          <Argument type="Double" name="weight"/>
+          <Argument type="String" name="energy"/>
+          <Argument type="Integer" name="resolution"/>
+          <Argument type="boolean" name="tdt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="WashingMachineService" package="Services" visibility="public" xPosition="1231.0" yPosition="291.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createWashingMachine" returnType="WashingMachine" visibility="public"/>
+        <Method name="createWashingMachine" returnType="WashingMachine" visibility="public">
+          <Argument type="Integer" name="charge"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="energy"/>
+          <Argument type="Double" name="weight"/>
+        </Method>
+        <Method name="finalPrice" returnType="Integer" visibility="public">
+          <Argument type="Double" name="weight"/>
+          <Argument type="String" name="energy"/>
+          <Argument type="Integer" name="charge"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="TVExamples" package="Enumerators" visibility="public" xPosition="20.0" yPosition="140.0">
+      <Literals>
+        <Literal name="TV1"/>
+        <Literal name="TV2"/>
+        <Literal name="TV3"/>
+        <Literal name="TV4"/>
+        <Literal name="TV5"/>
+      </Literals>
+    </Enum>
+    <Enum name="WMExamples" package="Enumerators" visibility="public" xPosition="20.0" yPosition="325.0">
+      <Literals>
+        <Literal name="WM1"/>
+        <Literal name="WM2"/>
+        <Literal name="WM3"/>
+        <Literal name="WM4"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Services.WashingMachineService" target="Entities.WashingMachine" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Entities.Television" target="Entities.Appliance"/>
+    <IsRelation name="is" source="Entities.WashingMachine" target="Entities.Appliance"/>
+    <UseRelation source="Services.TvService" target="Entities.Television" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Services.TvService" target="Services.ApplianceService"/>
+    <UseRelation source="Services.ApplianceService" target="Entities.Appliance" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Services.WashingMachineService" target="Services.ApplianceService"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

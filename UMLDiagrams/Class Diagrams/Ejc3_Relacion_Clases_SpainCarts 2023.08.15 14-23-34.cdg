@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejc3_Relacion_Clases_SpainCarts">
+  <ClassDiagramComponents>
+    <Class name="Ejc3_Relacion_Clases_SpainCarts" package="ejc3_relacion_clases_spaincarts" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="menu" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="waitKey" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Card" package="Entities" visibility="public" xPosition="272.0" yPosition="1.0">
+      <Fields>
+        <Field name="number" type="String" visibility="private"/>
+        <Field name="suit" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="number"/>
+          <Argument type="String" name="suit"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumber" returnType="String" visibility="public"/>
+        <Method name="setNumber" returnType="void" visibility="public">
+          <Argument type="String" name="number"/>
+        </Method>
+        <Method name="getSuit" returnType="String" visibility="public"/>
+        <Method name="setSuit" returnType="void" visibility="public">
+          <Argument type="String" name="suit"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Deck" package="Entities" visibility="public" xPosition="581.0" yPosition="-18.0">
+      <Fields>
+        <Field name="deck" type="HashSet&lt;Card&gt;" visibility="private"/>
+        <Field name="shuffleDeck" type="ArrayList&lt;Card&gt;" visibility="private"/>
+        <Field name="used" type="ArrayList&lt;Card&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="HashSet&lt;Card&gt;" name="deck"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDeck" returnType="HashSet&lt;Card&gt;" visibility="public"/>
+        <Method name="setDeck" returnType="void" visibility="public">
+          <Argument type="HashSet&lt;Card&gt;" name="deck"/>
+        </Method>
+        <Method name="getShuffleDeck" returnType="ArrayList&lt;Card&gt;" visibility="public"/>
+        <Method name="setShuffleDeck" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Card&gt;" name="shuffleDeck"/>
+        </Method>
+        <Method name="getUsed" returnType="ArrayList&lt;Card&gt;" visibility="public"/>
+        <Method name="setUsed" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Card&gt;" name="used"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DeckService" package="Services" visibility="public" xPosition="630.0" yPosition="350.0">
+      <Fields>
+        <Field name="read" type="Scanner" visibility="package"/>
+        <Field name="deck" type="HashSet&lt;Card&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createDeck" returnType="Deck" visibility="public"/>
+        <Method name="shuffleDeckInitial" returnType="void" visibility="public">
+          <Argument type="Deck" name="D"/>
+        </Method>
+        <Method name="shuffleDeck" returnType="void" visibility="public">
+          <Argument type="Deck" name="D"/>
+        </Method>
+        <Method name="showCards" returnType="void" visibility="public">
+          <Argument type="Deck" name="D"/>
+        </Method>
+        <Method name="showCardsShuffle" returnType="void" visibility="public">
+          <Argument type="Deck" name="D"/>
+        </Method>
+        <Method name="showCardsUsed" returnType="void" visibility="public">
+          <Argument type="Deck" name="D"/>
+        </Method>
+        <Method name="giveCard" returnType="void" visibility="public">
+          <Argument type="Deck" name="D"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="FaceCards" package="Enum" visibility="public" xPosition="921.0" yPosition="20.0">
+      <Literals>
+        <Literal name="JACK"/>
+        <Literal name="HORSE"/>
+        <Literal name="KING"/>
+      </Literals>
+    </Enum>
+    <Enum name="Suits" package="Enum" visibility="public" xPosition="921.0" yPosition="164.0">
+      <Literals>
+        <Literal name="CUPS"/>
+        <Literal name="COINS"/>
+        <Literal name="CLUBS"/>
+        <Literal name="SWORDS"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Services.DeckService" target="Entities.Deck" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="used" source="Entities.Deck" target="Entities.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Card&gt;"/>
+    <UseRelation source="Entities.Deck" target="Entities.Card" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="deck" source="Entities.Deck" target="Entities.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashSet&lt;Card&gt;"/>
+    <HasRelation name="shuffleDeck" source="Entities.Deck" target="Entities.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Card&gt;"/>
+    <HasRelation name="deck" source="Services.DeckService" target="Entities.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashSet&lt;Card&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

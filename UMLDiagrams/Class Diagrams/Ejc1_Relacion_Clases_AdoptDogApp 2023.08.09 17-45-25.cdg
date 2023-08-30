@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejc1_Relacion_Clases_AdoptDogApp">
+  <ClassDiagramComponents>
+    <Class name="Ejc1_Relacion_Clases_AdoptDogApp" package="ejc1_relacion_clases_adoptdogapp" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Dog" package="Entities" visibility="public" xPosition="20.0" yPosition="187.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="raze" type="String" visibility="private"/>
+        <Field name="age" type="Integer" visibility="private"/>
+        <Field name="size" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="raze"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="size"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getRaze" returnType="String" visibility="public"/>
+        <Method name="setRaze" returnType="void" visibility="public">
+          <Argument type="String" name="raze"/>
+        </Method>
+        <Method name="getAge" returnType="Integer" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="Integer" name="age"/>
+        </Method>
+        <Method name="getSize" returnType="String" visibility="public"/>
+        <Method name="setSize" returnType="void" visibility="public">
+          <Argument type="String" name="size"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Person" package="Entities" visibility="public" xPosition="522.0" yPosition="219.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="lastName" type="String" visibility="private"/>
+        <Field name="age" type="Integer" visibility="private"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="dog" type="Dog" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="Integer" name="id"/>
+          <Argument type="Dog" name="dog"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getLastName" returnType="String" visibility="public"/>
+        <Method name="setLastName" returnType="void" visibility="public">
+          <Argument type="String" name="lastName"/>
+        </Method>
+        <Method name="getAge" returnType="Integer" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="Integer" name="age"/>
+        </Method>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getDog" returnType="Dog" visibility="public"/>
+        <Method name="setDog" returnType="void" visibility="public">
+          <Argument type="Dog" name="dog"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PersonDogService" package="Services" visibility="public" xPosition="432.0" yPosition="37.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createPerson" returnType="Person" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="Integer" name="id"/>
+          <Argument type="Dog" name="dog"/>
+        </Method>
+        <Method name="CreateDog" returnType="Dog" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="raze"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="size"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="Sizes" package="Entities" visibility="public" xPosition="50.0" yPosition="644.0">
+      <Literals>
+        <Literal name="SMALL"/>
+        <Literal name="MEDIUM"/>
+        <Literal name="BIG"/>
+        <Literal name="GIANT"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="dog" source="Entities.Person" target="Entities.Dog" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Services.PersonDogService" target="Entities.Person" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Services.PersonDogService" target="Entities.Dog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entities.Person" target="Entities.Dog" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

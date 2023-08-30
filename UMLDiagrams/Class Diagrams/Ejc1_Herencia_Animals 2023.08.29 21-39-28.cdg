@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejc1_Herencia_Animals">
+  <ClassDiagramComponents>
+    <Class name="Ejc1_Herencia_Animals" package="ejc1_herencia_animals" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Animal" package="Entities" visibility="public" xPosition="232.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="protected"/>
+        <Field name="food" type="String" visibility="protected"/>
+        <Field name="age" type="Integer" visibility="protected"/>
+        <Field name="race" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="food"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="race"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="feed" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cat" package="Entities" visibility="public" xPosition="594.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="food"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="race"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="feed" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Dog" package="Entities" visibility="public" xPosition="687.0" yPosition="169.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="food"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="race"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="feed" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Horse" package="Entities" visibility="public" xPosition="565.0" yPosition="335.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="food"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="race"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="feed" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Entities.Horse" target="Entities.Animal"/>
+    <IsRelation name="is" source="Entities.Cat" target="Entities.Animal"/>
+    <IsRelation name="is" source="Entities.Dog" target="Entities.Animal"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
