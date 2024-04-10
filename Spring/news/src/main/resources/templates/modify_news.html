@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>MODIFY NEWS</title>
+        <div th:replace= "~{/fragments/head :: head}"></div>
+    </head>
+    
+    <nav th:replace= "~{/fragments/navbar :: nav}"></nav>
+   
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">Modify News</h1>
+                <p class="lead mb-0">By DIEGO ROMERO</p>
+            </div>
+        </div>
+    </header>
+    <body>
+        <h3  >MODIFY NEWS</h3>
+        
+        <div class="container text-center">
+           <form class="form" th:action="@{/news/modnews/__${news.id}__}" method="POST" enctype="multipart/form-data">
+            <input hidden th:value="${news.id}" name="id" >
+            <input hidden th:value="${session.usersession.email}" name="user" >
+            <div class="mb-3">
+                <label for="newsTitle" class="form-label">News Title</label>
+                <input th:value="${news.title}" type="text" name="title" id="newsTitle" >
+            </div>
+            <div>
+                <label for="newsImage" class="form-label">News Image</label>
+                <input type="file" class="form-control" name="file" id="newsImage">
+            </div>
+            <div>
+                <label for="newsContent" class="form-label">News Content</label>
+                <input th:value="${news.body}" class="form-control" name="body" id="newsContent" rows="5">
+            </div>
+            <div></div>
+
+
+
+            <div th:if="${error != null}" class="card text-white bg-danger mb-3 errorMessage">
+                <div class="card-body">
+                    <h5 class="card-title">Error </h5>
+                    <p class="card-text" th:text="${error}"></p>
+                </div>
+            </div>
+            <div th:if="${success != null}" class="card text-white bg-danger mb-3 successMessage">
+                <div class="card-body">
+                    <h5 class="card-title">Success </h5>
+                    <p class="card-text" th:text="${success}"></p>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" >Modify</button>
+            </div>
+           </form>
+        </div>
+    </body>
+</html>

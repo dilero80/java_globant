@@ -42,8 +42,10 @@ public class Ejc11_POO_Dateclase {
         System.out.println("La fecha es " + fecha);
         System.out.println("la fecha  actual es " + hoy);
         
-        int anio1 = fecha.getYear();
-        int anio2 = hoy.getYear();
+        int anio1;
+        anio1 = fecha.getYear();
+        int anio2;
+        anio2 = hoy.getYear();
         
         System.out.println("Hay " + Math.abs(anio2 - anio1) + " años de diferencia");
         

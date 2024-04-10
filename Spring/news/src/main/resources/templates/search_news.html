@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>SEARCH NEWS</title>
+        <div th:replace= "~{/fragments/head :: head}"></div>
+    </head>
+    <div th:replace= "~{/fragments/navbaruser :: navbaruser}"></div>
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">Search News By Title</h1>
+                <p class="lead mb-0">By DIEGO ROMERO</p>
+            </div>
+        </div>
+    </header>
+    <body>
+        <div class="container text-center">
+            <form class="form" action="/news/searchbytitle" method="POST">
+             <div class="mb-3">
+                 <label for="newsString" class="form-label">Search by word in title</label>
+                 <input type="search" name="title" id="newsString">
+             </div>
+             <div th:if="${error != null}" class="card text-white bg-danger mb-3 errorMessage">
+                 <div class="card-body">
+                     <h5 class="card-title">Error </h5>
+                     <p class="card-text" th:text="${error}"></p>
+                 </div>
+             </div>
+             <div th:if="${success != null}" class="card text-white bg-danger mb-3 successMessage">
+                 <div class="card-body">
+                     <h5 class="card-title">Success </h5>
+                     <p class="card-text" th:text="${success}"></p>
+                 </div>
+             </div>
+             <div>
+                 <button type="submit" class="btn btn-primary" >Search</button>
+             </div>
+            </form>
+         </div>
+         <div th:replace= "~{/fragments/footer :: footer}"></div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/js/scripts.js"></script>    
+    </body>
+</html>
